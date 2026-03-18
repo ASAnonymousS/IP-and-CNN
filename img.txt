@@ -1,0 +1,30 @@
+close all
+clc
+
+img = imread("C:\Users\ashri\Downloads\Lenna_(test_image).png");
+imshow(img);
+
+img2 = rgb2gray(img);
+figure;
+imshow(img2);
+
+filter = [-1,-1,-1;-1,8,-1;-1,-1,-1];
+img3 = imfilter(img2,filter);
+figure;
+imshow(img3);
+
+filter = [-1 0 1; -1 0 1; -1 0 1];
+img4 = imfilter(img2, filter);
+figure;
+imshow(img4);
+
+filter = [-1 -1 -1; 0 0 0; 1 1 1];
+img4 = imfilter(img2, filter);
+figure;
+imshow(img4);
+
+%figure
+%imhist(img);
+
+figure
+imhist(img2);
